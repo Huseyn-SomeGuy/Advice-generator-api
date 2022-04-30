@@ -1,0 +1,198 @@
+/*Reseting*/
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+/*=========================================================================================================*/
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+/*=========================================================================================================*/
+/*Color variables*/
+
+// ### Primary
+
+$Light-Cyan: hsl(193, 38%, 86%);
+$Neon-Green: hsl(150, 100%, 66%);
+
+// ### Neutral
+
+$Grayish-Blue: hsl(217, 19%, 38%);
+$Dark-Grayish-Blue: hsl(217, 19%, 24%);
+$Dark-Blue: hsl(218, 23%, 16%);
+
+/*Other variables*/
+$default-font: 'Manrope', sans-serif;
+/*=========================================================================================================*/
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+   background-color: $Dark-Blue;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.content {
+   margin: 0 1rem;
+   padding: 1.5rem;
+   width: 80%;
+   max-width: 375px;
+   position: relative;
+   font-family: $default-font;
+   background-color: $Dark-Grayish-Blue;
+   border-radius: 10px;
+   box-shadow: 0 0 5px rgba($color: $Grayish-Blue, $alpha: .08);
+
+
+		&__title {
+         margin-bottom: 1.5rem;
+         text-transform: uppercase;
+         text-align: center;
+         color: $Neon-Green;
+         font-size: 12px;
+         letter-spacing: 2px;
+
+		}
+      
+      &__box {
+         max-width: 333px;
+         min-height: 120px;
+         overflow: hidden;
+         display: flex;
+         position: relative;
+      }
+
+		&__text {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         margin-bottom: 1.5rem;
+         color: $Light-Cyan;
+         font-weight: 800;
+         font-size: 18px;
+         text-align: center;
+         line-height: 1.5;
+         transition: all 1.3s;
+		}
+      
+      &__text.active {
+         transform: translateX(0);
+      }
+      &__text.next {
+         opacity: 0;
+         transform: translateX(100%);
+      }
+      &__text.disable{
+         opacity: 0;
+         transform:translateX(-100%);
+      }
+}
+.divider {
+   margin-bottom: 2.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   img{
+      max-width: 100%;
+   }
+}
+.button {
+   padding: 1rem;
+   display: inline-block;
+   position: absolute;
+   left: 50%;
+   bottom: -26px;
+   transform: translateX(-50%);
+   background-color: $Neon-Green;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: all 0.2s;
+}
+.button:hover {
+   box-shadow: 0 0 20px 2px hsl(150, 100%, 66%);
+}
